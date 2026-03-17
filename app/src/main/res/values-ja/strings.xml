@@ -66,7 +66,7 @@
   <string name="show_route">ルートを表示</string>
   <string name="item_report_duration_title">位置報告の間隔</string>
   <string name="item_report_duration_desc">位置を報告する頻度 (ミリ秒単位)</string>
-  <string name="item_report_duration_value">100 ミリ秒</string>
+  <string name="item_report_duration_value">600 ミリ秒</string>
   <string name="gnss_mock">GNSS モック</string>
   <string name="satellites_info">衛星の情報</string>
   <string name="zero">0 G</string>

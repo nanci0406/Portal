@@ -101,7 +101,7 @@ object FakeLoc {
     @Volatile var longitude = 0.0
     @Volatile var altitude = 80.0
 
-    @Volatile var speed = 3.05
+    @Volatile var speed = 2.30
 
     var speedAmplitude = 1.0
 
