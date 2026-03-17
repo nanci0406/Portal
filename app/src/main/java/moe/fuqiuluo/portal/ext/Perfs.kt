@@ -39,23 +39,6 @@ var Context.selectRoute: HistoricalRoute?
         putString("selectedRoute", JSON.toJSONString(value))
     }
 
-var Context.defaultRoute: HistoricalRoute?
-    get() {
-        return sharedPrefs.getString("defaultRoute", null)?.let {
-            try {
-                JSON.parseObject(it, HistoricalRoute::class.java)
-            } catch (e: Exception) {
-                sharedPrefs.edit(commit = true) {
-                    putString("defaultRoute", "")
-                }
-                null
-            }
-        }
-    }
-    set(value) = sharedPrefs.edit(commit = true) {
-        putString("defaultRoute", JSON.toJSONString(value))
-    }
-
 val Context.historicalLocations: List<HistoricalLocation>
     get() {
         return sharedPrefs.getStringSet("locations", emptySet())?.map {
@@ -236,4 +219,5 @@ var Context.disableWifiScan: Boolean
         putBoolean("disableWifiScan", value)
         FakeLoc.enableMockWifi = value
     }
+
 

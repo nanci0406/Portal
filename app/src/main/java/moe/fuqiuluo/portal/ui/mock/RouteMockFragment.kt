@@ -32,7 +32,6 @@ import moe.fuqiuluo.portal.android.widget.RockerView
 import moe.fuqiuluo.portal.android.window.OverlayUtils
 import moe.fuqiuluo.portal.databinding.FragmentRouteMockBinding
 import moe.fuqiuluo.portal.ext.altitude
-import moe.fuqiuluo.portal.ext.defaultRoute
 import moe.fuqiuluo.portal.ext.drawOverOtherAppsEnabled
 import moe.fuqiuluo.portal.ext.hookSensor
 import moe.fuqiuluo.portal.ext.jsonHistoricalRoutes
@@ -225,7 +224,7 @@ class RouteMockFragment : Fragment() {
 //        val routes = Json.decodeFromString<List<HistoricalRoute>>(locations)
         // 如果locations是空字符串，则创建默认
         if (locations.isEmpty()) {
-            val defaultRoute = requireContext().defaultRoute ?: HistoricalRoute(
+            val defaultRoute = requireContext().selectRoute ?: HistoricalRoute(
                 "默认路线",
                 mutableListOf(Pair(39.908822, 116.397465), Pair(39.907951, 116.397500))
             )
@@ -242,10 +241,7 @@ class RouteMockFragment : Fragment() {
             } else {
                 binding.mockRouteName.text = route.name
                 mockServiceViewModel.selectedRoute = route
-                with(requireContext()) {
-                    selectRoute = route
-                    defaultRoute = route
-                }
+                requireContext().selectRoute = route
 
                 if (MockServiceHelper.isMockStart(mockServiceViewModel.locationManager!!)) {
                     // 获取第一个点
