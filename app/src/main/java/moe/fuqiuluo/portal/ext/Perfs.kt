@@ -67,7 +67,7 @@ var Context.jsonHistoricalRoutes: String
     }
 
 var Context.reportDuration: Int
-    get() = sharedPrefs.getInt("reportDuration", 100)
+    get() = sharedPrefs.getInt("reportDuration", 600)
     set(value) = sharedPrefs.edit(commit = true) {
         putInt("reportDuration", value)
     }
@@ -219,5 +219,4 @@ var Context.disableWifiScan: Boolean
         putBoolean("disableWifiScan", value)
         FakeLoc.enableMockWifi = value
     }
-
 

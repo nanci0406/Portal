@@ -121,7 +121,7 @@
                     android:id="@+id/speed_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3.05米/秒"
+                    android:text="2.30米/秒"
                     android:textSize="11sp"
                     app:layout_constraintTop_toBottomOf="@id/speed_title"
                     app:layout_constraintEnd_toEndOf="parent" />
