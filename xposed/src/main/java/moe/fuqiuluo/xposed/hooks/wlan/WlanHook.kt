@@ -84,7 +84,7 @@ object WlanHook {
             if (FakeLoc.enableDebugLog)
                 Logger.debug("In getScanResults with caller: $packageName, state: ${FakeLoc.enableMockWifi}")
 
-            if(FakeLoc.enableMockWifi) {
+            if(FakeLoc.enableMockWifi && !BinderUtils.isSystemPackages(packageName)) {
                 if(result == null) {
                     return@afterHook 
                 }
