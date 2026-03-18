@@ -120,7 +120,7 @@ object FakeLoc {
             }
         }
 
-    var accuracy = 25.0f
+    var accuracy = 2.0f
         set(value) {
             field = if (value < 0) {
                 -value
